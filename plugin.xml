@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.yanisimov.prepopulatedb"
     version="0.0.1">
 
-	<name>prepopulatedb</name>
+	<name>PrePopulateDb</name>
 
 	<engines>
         <engine name="cordova" version=">=3.0.0" />
@@ -16,19 +15,22 @@
 	</js-module>
 
 	<platform name="android">
-		<config-file target="config.xml" parent="/*">
+		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="PrePopulateDb" >
 				<param name="android-package" value="PrePopulateDb"/>
 			</feature>
 		</config-file>
-		<source-file src="src/android/PrePopulateDb.java" />
+		
+		<source-file src="src/android/com/yanisimov/PrePopulateDb.java" target-dir="src/com/yanisimov" />
 	</platform>
+
 	<platform name="wp8">
         <config-file target="config.xml" parent="/*">
            	<feature name="PrePopulateDb" >
-				<param name="wp-package" value="PrePopulateDb"/>
+				<param name="wp-package" value="com.yanisimov.PrePopulateDb"/>
 			</feature>
         </config-file>
-        <source-file src="src/wp8/PrePopulateDb.cs"/>
+
+        <source-file src="src/wp8/PrePopulateDb.cs" />
     </platform>
 </plugin>
